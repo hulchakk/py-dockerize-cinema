@@ -4,13 +4,13 @@ from django.db import OperationalError, connection
 
 class Command(BaseCommand):
     def handle(self, *args, **options):
-        self.stdout.write('Waiting for database...')
+        self.stdout.write("Waiting for database...")
         db_conn = None
         while not db_conn:
             try:
                 connection.ensure_connection()
                 db_conn = True
             except OperationalError:
-                self.stdout.write('Database unavailable...')
+                self.stdout.write("Database unavailable...")
 
-        self.stdout.write(self.style.SUCCESS('Database available!'))
+        self.stdout.write(self.style.SUCCESS("Database available!"))
