@@ -2,5 +2,7 @@
 .venv/
 .gitignore
 README.md
-Dockerfile
-docker-compose.yaml
+.env
+.pytest_cache/
+*.pyc
+__pycache__/
